@@ -17,4 +17,6 @@ const counterReducer = (state = {counter: 0}, action) => {
 
 const store =  createStore(counterReducer) ; // create the central data
 
+export default store ;
+
 
