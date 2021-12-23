@@ -13,6 +13,8 @@ const Counter = () => {
   const counter = useSelector(state => state.counter) ;
   // auto set up a subcription, compo will receive the changes automatically
 
+  const show = useSelector( state => state.showCounter)
+
   const minusHanlder = () =>{
     dispatch({type:'decrement' });
   }
@@ -24,12 +26,14 @@ const Counter = () => {
       dispatch({type:'increment' });
   }
 
-  const toggleCounterHandler = () => {};
+  const toggleCounterHandler = () => {
+      dispatch({type: 'toggle'});
+  };
 
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
-      <div className={classes.value}>{counter}</div>
+      {show && <div className={classes.value}>{counter}</div>}
       <div>
         <button onClick={addHandler}>Add</button>
         <button onClick={increaseHandler}>Add 5 </button>
