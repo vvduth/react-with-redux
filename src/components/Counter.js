@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { useSelector , useDispatch, connect} from 'react-redux';
 
 import classes from './Counter.module.css';
-import {INCREMENT} from '../store/index'
+import {counterActions} from '../store/index'
 
 const Counter = () => {
 
@@ -17,18 +17,18 @@ const Counter = () => {
   const show = useSelector( state => state.showCounter)
 
   const minusHanlder = () =>{
-    dispatch({type:'decrement' });
+    dispatch(counterActions.decrement());
   }
 
   const increaseHandler = () => {
-    dispatch({type: 'increase', amount: 5})
+    dispatch(counterActions.increase(5)); 
   }
   const addHandler = () => {
-      dispatch({type:INCREMENT });
+      dispatch(counterActions.increment());
   }
 
   const toggleCounterHandler = () => {
-      dispatch({type: 'toggle'});
+      dispatch(counterActions.toggleCounter());
   };
 
   return (
