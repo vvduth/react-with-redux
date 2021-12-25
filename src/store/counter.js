@@ -1,4 +1,4 @@
-import {createSlice, configureStore} from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
 
 const initialCounterState = {counter: 0 , showCounter : true};
 

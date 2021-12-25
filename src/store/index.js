@@ -6,11 +6,6 @@ import authReducer from './auth';
 export const INCREMENT = 'increment';
 
 
-
-
-
-
-
 //const store =  createStore(counterSlice.reducer) ; // create the central data
 //ALWAYS return a new abject state
 const store = configureStore({
