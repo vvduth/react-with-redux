@@ -11,10 +11,10 @@ const Counter = () => {
   // use dispatch return a function that can be executed
 
   //pass a a func into useSelector, a fuc that decide the data we want to take
-  const counter = useSelector(state => state.counter) ;
+  const counter = useSelector(state => state.counter.counter) ;
   // auto set up a subcription, compo will receive the changes automatically
 
-  const show = useSelector( state => state.showCounter)
+  const show = useSelector( state => state.counter.showCounter)
 
   const minusHanlder = () =>{
     dispatch(counterActions.decrement());
